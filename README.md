@@ -85,6 +85,8 @@ FROM game_sales
 ORDER BY games_sold DESC
 LIMIT 10;
 
+![](ImagesGames/1.jpg)
+
 2. Missing review scores
  - Join games_sales and reviews
 - Select a count of the number of games where both critic_score and user_score are null
@@ -95,6 +97,8 @@ FROM game_sales AS g
 LEFT JOIN reviews AS r
     USING(game)
 WHERE critic_score IS NULL AND user_score IS NULL
+
+![](ImagesGames/2.jpg)
 
 3. Years that video game critics loved
 -  Select release year and average critic score for each year, rounded and aliased
@@ -112,6 +116,8 @@ GROUP BY year
 ORDER BY avg_critic_score DESC
 LIMIT 10;
 
+![](ImagesGames/3.jpg)
+
 4. Was 1982 really that great?
 - Paste your query from the previous task; update it to add a count of games released in each year called num_games
 - Update the query so that it only returns years that have more than four reviewed games
@@ -128,6 +134,8 @@ HAVING COUNT(g.game) > 4
 ORDER BY avg_critic_score DESC
 LIMIT 10;
 
+![](ImagesGames/4.jpg)
+
 5. Years that dropped off the critics' favorites list
 -  Select the year and avg_critic_score for those years that dropped off the list of critic favorites 
 - Order the results from highest to lowest avg_critic_score
@@ -141,6 +149,8 @@ SELECT
     year,
     avg_critic_score
 FROM top_critic_years_more_than_four_games
+
+![](ImagesGames/5.jpg)
 
 6. Years video game players loved
 - Select year, an average of user_score, and a count of games released in a given year, aliased and rounded
@@ -158,6 +168,8 @@ GROUP BY year
 HAVING COUNT(g.game) > 4
 ORDER BY avg_user_score DESC
 LIMIT 10;
+
+![](ImagesGames/6.jpg)
 
 7. Years that both players and critics loved
 Alright, we've got a list of the top ten years according to both critic reviews and user reviews. Are there any years that showed up on both tables? If so, those years would certainly be excellent ones! 
@@ -230,6 +242,8 @@ SELECT
 FROM top_user_years_more_than_four_games
 ORDER BY year
 
+![](ImagesGames/7.jpg)
+
 8. Sales in the best video game years
 - Select year and sum of games_sold, aliased as total_games_sold; order results by total_games_sold descending
 - Filter game_sales based on whether each year is in the list returned in the previous task
@@ -248,3 +262,5 @@ WHERE year IN (SELECT
                 )
 GROUP BY year
 ORDER BY total_games_sold DESC;
+
+![](ImagesGames/8.jpg)
