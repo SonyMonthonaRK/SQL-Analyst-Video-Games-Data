@@ -36,7 +36,7 @@ In this project, we'll look at the top 400 best-selling video games from 1977 th
 <td>Game developer</td>
 </tr>
 <tr>
-<td style="text-align:left;"><code>games_sold</code></td>
+<td style="text-align:left;"><code>Total_Shipped</code></td>
 <td>float</td>
 <td>Number of copies sold (millions)</td>
 </tr>
