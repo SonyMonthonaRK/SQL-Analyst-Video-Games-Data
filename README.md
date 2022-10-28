@@ -47,7 +47,7 @@ In this project, we'll look at the top 400 best-selling video games from 1977 th
 </tr>
 </tbody>
 </table>
-<h3 id="reviews"><code>reviews</code></h3>
+<h3 id="reviews"><code>game_reviews</code></h3>
 <table>
 <thead>
 <tr>
